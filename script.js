@@ -69,10 +69,13 @@ Array.from(boxes).forEach(element =>{
 })
 
 //reset button
-document.getElementById('reset').addEventListener('click',()=>{
+document.getElementById('reset').addEventListener('click', () => {
     let boxTexts = document.getElementsByClassName("boxText");
-    Array.from(boxTexts).forEach((e)=>{
+    Array.from(boxTexts).forEach((e) => {
         e.innerText = '';
+    })
+    Array.from(document.getElementsByClassName("box")).forEach((e) => {
+        e.style.background = "white";
     })
     turn = 'X';
     document.getElementById("turn").innerText = "Turn for " + turn;
