@@ -1,10 +1,10 @@
 let boxes = document.querySelectorAll(".box");
 let turn = 'X';
 let gameOver = false;
-let ting = new Audio("/ting.mp3");
-let win = new Audio("/win.mp3");
-let success = new Audio("/success.mp3");
-let gamemusic = new Audio("/gamemusic.mp3");
+let ting = new Audio("./ting.mp3");
+let win = new Audio("./win.mp3");
+let success = new Audio("./success.mp3");
+let gamemusic = new Audio("./gamemusic.mp3");
 
 
 window.onload = ()=>{
@@ -109,6 +109,6 @@ document.getElementById("chanceSound").addEventListener('click',()=>{
         chanceSoundIcon.classList.remove("fa-volume-xmark");
         chanceSoundIcon.classList.add("fa-music");
         chanceSound = false;
-        ting = new Audio("/ting.mp3");
+        ting = new Audio("./ting.mp3");
     }
 })
