@@ -42,6 +42,7 @@ function checkWin(){
 }
 
 
+let count = 0;
 Array.from(boxes).forEach(element =>{
     gamemusic.play();
     let boxText = element.getElementsByClassName('boxText')[0];
@@ -49,7 +50,9 @@ Array.from(boxes).forEach(element =>{
 
     element.addEventListener('click',()=>{
         if(boxText.innerText === ''){
-            if (!gameOver){
+            if (!gameOver && count<9){
+                count++;
+                console.log(count)
                 boxText.innerText = turn;
                 turn = changeTurn();
                 checkWin();
@@ -57,10 +60,13 @@ Array.from(boxes).forEach(element =>{
                 element.style.background = "rgba(187, 112, 187, 0.25)";
                 document.getElementById("turn").innerText = "Turn for " + turn;
             }
+            if (!gameOver && count == 9){
+                console.log("done");
+                document.getElementById("turn").innerText = "Match Tied!!!";
+            }
         }
     })
 })
-
 
 //reset button
 document.getElementById('reset').addEventListener('click',()=>{
