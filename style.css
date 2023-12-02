@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Nova+Square&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&family=Open+Sans:wght@400;600;700&family=Orbitron:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Condensed:wght@300;400;700&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    max-width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(45deg, #0a0a0a, #3a4452); */
+}
+nav{
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+
+nav ul{
+    list-style: none;
+}
+.features{
+    display: flex;
+    align-items: center;
+}
+.rules a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+.rules a:hover{
+    font-size: 19px;
+}
+
+.dropdown {
+    padding-right: 60px;
+    margin: 0px 20px;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 18px;
+    border: none;
+    border-radius: 16px;
+    outline: none;
+    color: white;
+    padding: 12px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+    font-size: 18.5px;
+    background-color: rgba(128, 128, 128, 0.557);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: gray;
+    min-width: 140px;
+    box-shadow: 8px 8px 30px  rgba(0,0,0,0.5);
+    z-index: 1;
+}
+.bgmusic{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
+.dropdown-content a {
+    float: none;
+    color: white;
+    font-size: 15px;
+    padding: 12px 5px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+
+/* .dropdown-content:hover{
+    background-color: rgba(128, 128, 128, 0.3);
+    color: black;
+} */
+/* .bgmusic a:hover{
+    color: black;
+} */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+.gameContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.container{
+    display: grid;
+    /* grid-template-columns: repeat(3,20vh);
+    grid-template-rows: repeat(3,20vh); */
+    grid-template-columns: repeat(3, 165px);
+    grid-template-rows: repeat(3, 165px);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.box{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.box:hover{
+    background-color: rgba(187, 112, 187, 0.25);
+}
+
+.boxText{
+    font-size: 100px;
+}
+
+.line{
+    position: absolute;
+    height: 4px;
+    width: 0px;
+    border-radius: 4px;
+    background-color: rgb(99, 15, 99);
+    transform: translate(41.25px , 82.5px) rotate(0deg);
+    transition: width 1s ease-in-out;
+}
+
+
+/* Utility class */
+.bt-0{
+    border-top: 0px;
+}
+.bl-0{
+    border-left: 0px;
+}
+.br-0{
+    border-right: 0px;
+}
+.bb-0{
+    border-bottom: 0px;
+}
+
+
+
+.gameInfo{
+    margin: 0px 50px;
+}
+h1{
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+.head{
+    opacity: 0;
+    color: rgb(204, 40, 219);
+    animation: width 2s ease-in-out 1s infinite alternate;
+}
+@keyframes width {
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#turn{
+    font-size: 20px;
+}
+#reset{
+    margin: 0px 20px;
+    padding: 8px 15px;
+    background-color: rgba(187, 112, 187, 0.363);
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 4px 4px 20px rgba(0,0,0,0.5);
+}
+#reset:hover{
+    font-size: 16px;
+    padding: 8px 16px;
+    background-color: rgba(187, 112, 187, 0.7);
+}
+#reset:visited{
+    background-color: rgb(203, 112, 203);
+}
+
+.gif{
+    position: relative;
+    margin: 30px;
+}
+.gif img{
+    width: 0px;
+    transition: width 1s ease-in;
+}
+.popper{
+    position: absolute;
+}
+.popper img{
+    margin-top: -80px;
+    margin-left: -40px;
+    width: 0px;
+}
+
+
+.rulesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rulesContainer h1{
+    font-size: 35px;
+}
+.rulesContainer span{
+    color: rgb(204, 40, 219);
+}
+
+.rulesContainer li{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .dropdown {
+        padding-right: 10px;
+    }
+    .container{
+        grid-template-columns: repeat(3, 165px);
+        grid-template-rows: repeat(3, 165px);
+    }
+    .boxText{
+        font-size: 70px;
+    }
+    .gameInfo{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #turn{
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .rulesContainer h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    nav{
+        padding-left: 10px;
+        width: 100vw;
+    }
+    .dropdown {
+        padding-right: 10px;
+    }
+    .container{
+        grid-template-columns: repeat(3, 110px);
+        grid-template-rows: repeat(3, 110px);
+    }
+    .boxText{
+        font-size: 70px;
+    }
+    .gameInfo{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #turn{
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .rulesContainer h1{
+        font-size: 1.5rem;
+    }
+    .rulesContainer li{
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    nav{
+        padding-left: 10px;
+        width: 100vw;
+    }
+    .dropdown {
+        padding-right: 10px;
+    }
+    .container{
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+    .boxText{
+        font-size: 60px;
+    }
+    .gameInfo{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #turn{
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .rulesContainer h1{
+        font-size: 1.5rem;
+    }
+    .rulesContainer li{
+        font-size: 16px;
+        line-height: 30px;
+    }
+}

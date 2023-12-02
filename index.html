@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>TIC TAC TOE</li>
+        </ul>
+        <div class="features">
+            <div class="rules"><a href="#rulesContainer">Rules</a></div>
+            <div class="dropdown">
+                <button class="dropbtn">Settings
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <div class="bgmusic" id="bgmusic">
+                        <a href="#">Background Music </a><i class="fa-solid fa-music bgmusicIcon"></i>
+                    </div>
+                    <div class="bgmusic" id="chanceSound">
+                        <a href="#">Move Sound </a><i class="fa-solid fa-music chanceSoundIcon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="gameContainer">
+        <div class="container">
+            <div class="line"></div>
+            <div class="box bl-0 bt-0"><span class="boxText"></span></div>
+            <div class="box bt-0"><span class="boxText"></span></div>
+            <div class="box bt-0 br-0"><span class="boxText"></span></div>
+            <div class="box bl-0"><span class="boxText"></span></div>
+            <div class="box"><span class="boxText"></span></div>
+            <div class="box br-0"><span class="boxText"></span></div>
+            <div class="box bl-0 bb-0"><span class="boxText"></span></div>
+            <div class="box bb-0"><span class="boxText"></span></div>
+            <div class="box br-0 bb-0"><span class="boxText"></span></div>
+        </div>
+
+        <div class="gameInfo">
+            <h1>Welcome to <span class="head">TIC TAC TOE</span></h1>
+            <span id="turn">Turn for X</span>
+            <button id="reset">Reset</button>
+            <div class="gif">
+                <img class="dancing" src="./Images/dancing.gif" alt="HURRAH!!!">
+                <div class="popper"><img class="pop" src="./Images/popper.gif"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rulesContainer" id="rulesContainer">
+        <h1>Rules for <span>Tic-Tac-Toe</span></h1>
+        <ol>
+            <li>The game is played on a grid that's 3 squares by 3 squares.</li>
+            <li>You are X , your friend (or the computer in this case) is O . Players take turns putting their marks in
+                empty squares.</li>
+            <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+            <li>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a
+                tie.</li>
+        </ol>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
