@@ -41,32 +41,34 @@ function checkWin(){
     })
 }
 
-
 let count = 0;
-Array.from(boxes).forEach(element =>{
-    gamemusic.play();
-    let boxText = element.getElementsByClassName('boxText')[0];
-
-
-    element.addEventListener('click',()=>{
-        if(boxText.innerText === ''){
-            if (!gameOver && count<9){
-                count++;
-                console.log(count)
-                boxText.innerText = turn;
-                turn = changeTurn();
-                checkWin();
-                ting.play();
-                element.style.background = "rgba(187, 112, 187, 0.25)";
-                document.getElementById("turn").innerText = "Turn for " + turn;
+function entry(){
+    Array.from(boxes).forEach(element => {
+        gamemusic.play();
+        let boxText = element.getElementsByClassName('boxText')[0];
+    
+    
+        element.addEventListener('click', () => {
+            if (boxText.innerText === '') {
+                if (!gameOver && count < 9) {
+                    count++;
+                    boxText.innerText = turn;
+                    turn = changeTurn();
+                    document.getElementById("turn").innerText = "Turn for " + turn;
+                    checkWin();
+                    ting.play();
+                    element.style.background = "rgba(187, 112, 187, 0.25)";
+                }
+                if (!gameOver && count == 9) {
+                    document.getElementById("turn").innerText = "Match Tied!!!";
+                }
             }
-            if (!gameOver && count == 9){
-                console.log("done");
-                document.getElementById("turn").innerText = "Match Tied!!!";
-            }
-        }
+        })
     })
-})
+}
+entry();
+
+
 
 //reset button
 document.getElementById('reset').addEventListener('click', () => {
@@ -75,14 +77,19 @@ document.getElementById('reset').addEventListener('click', () => {
         e.innerText = '';
     })
     Array.from(document.getElementsByClassName("box")).forEach((e) => {
-        e.style.background = "white";
+        e.style.background = "transparent";
     })
     turn = 'X';
     document.getElementById("turn").innerText = "Turn for " + turn;
     document.getElementsByClassName("dancing")[0].style.width = "0px";
     document.getElementsByClassName("pop")[0].style.width = "0px";
     document.querySelector('.line').style.width = "0vw";
+    count = 0;
+    entry();
+    gameOver = false;
 })
+
+
 
 // background music controls
 let bgmusic = false;
