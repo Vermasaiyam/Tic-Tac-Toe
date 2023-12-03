@@ -248,6 +248,28 @@ h1{
     line-height: 30px;
 }
 
+.footer{
+    height: 70px;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    margin-top: 40px;
+    font-size: 18px;
+    bottom: 0;
+    left: 0;
+}
+.socialIcons{
+    padding-right: 10px;
+}
+.socialIcons i{
+    padding: 0px 5px;
+    cursor: pointer;
+}
+
 
 
 @media screen and (max-width: 1000px) {
@@ -320,6 +342,12 @@ h1{
         font-size: 16px;
         line-height: 30px;
     }
+    .footer{
+        font-size: 15px;
+    }
+    .socialIcons{
+        padding-right: 0px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -359,5 +387,11 @@ h1{
     .rulesContainer li{
         font-size: 16px;
         line-height: 30px;
+    }
+    .footer{
+        font-size: 12px;
+    }
+    .socialIcons{
+        padding-right: 0px;
     }
 }
