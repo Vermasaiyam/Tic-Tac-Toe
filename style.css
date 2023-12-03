@@ -190,6 +190,13 @@ h1{
     }
 }
 
+table, th, td{
+    margin: 20px 0px;
+    font-size: 18px;
+    border: 1px solid black;
+    text-align: center;
+}
+
 #turn{
     font-size: 20px;
 }
