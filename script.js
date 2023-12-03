@@ -11,42 +11,52 @@ window.onload = ()=>{
     gamemusic.play();
 }
 
-function changeTurn(){
+function changeTurn() {
     return turn === 'X' ? 'O' : 'X';
 }
-
-function checkWin(){
+let Xwin = 0;
+let Owin = 0;
+function checkWin() {
     let boxTexts = document.getElementsByClassName('boxText');
     let wins = [
-        [0,1,2, 41.25,82.5,0],
-        [3,4,5, 41.5,247.5,0],
-        [6,7,8, 41.5,412.5,0],
-        [0,3,6, -123.75,247.5,90],
-        [1,4,7, 41.25,247.5,90],
-        [2,5,8, 206.25,247.5,90],
-        [0,4,8, 41.25,247.5,45],
-        [2,4,6, 41.25,247.5,-45],
+        [0, 1, 2, 41.25, 82.5, 0],
+        [3, 4, 5, 41.5, 247.5, 0],
+        [6, 7, 8, 41.5, 412.5, 0],
+        [0, 3, 6, -123.75, 247.5, 90],
+        [1, 4, 7, 41.25, 247.5, 90],
+        [2, 5, 8, 206.25, 247.5, 90],
+        [0, 4, 8, 41.25, 247.5, 45],
+        [2, 4, 6, 41.25, 247.5, -45],
     ]
-    wins.forEach(e=>{
-        if ((boxTexts[e[0]].innerText === boxTexts[e[1]].innerText) && (boxTexts[e[1]].innerText === boxTexts[e[2]].innerText) && (boxTexts[e[0]].innerText !== '')){
+    wins.forEach(e => {
+        if ((boxTexts[e[0]].innerText === boxTexts[e[1]].innerText) && (boxTexts[e[1]].innerText === boxTexts[e[2]].innerText) && (boxTexts[e[0]].innerText !== '')) {
             gameOver = true;
-            document.getElementById("turn").innerText = boxTexts[e[0]].innerText + " WON!!!";
+            document.getElementById("turn").innerText = boxTexts[e[1]].innerText + " WON!!!";
             document.getElementsByClassName("dancing")[0].style.width = "180px";
             document.getElementsByClassName("pop")[0].style.width = "130px";
             document.querySelector('.line').style.width = "410px";
             document.querySelector('.line').style.transform = `translate(${e[3]}px, ${e[4]}px) rotate(${e[5]}deg)`
             win.play();
             success.play();
+
+            // update the winning table
+            if (boxTexts[e[1]].innerText === 'X'){
+                Xwin = (Xwin + 1);
+                document.getElementsByClassName('Xwin')[0].innerText = (Xwin);
+            }
+            else{
+                Owin = (Owin + 1);
+                document.getElementsByClassName('Owin')[0].innerText = (Owin);
+            }
         }
     })
 }
 
 let count = 0;
+gamemusic.play();
 function entry(){
     Array.from(boxes).forEach(element => {
-        gamemusic.play();
         let boxText = element.getElementsByClassName('boxText')[0];
-    
     
         element.addEventListener('click', () => {
             if (boxText.innerText === '') {
