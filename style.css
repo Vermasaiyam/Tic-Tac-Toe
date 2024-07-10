@@ -92,15 +92,6 @@ nav ul{
     text-align: left;
 }
 
-
-
-/* .dropdown-content:hover{
-    background-color: rgba(128, 128, 128, 0.3);
-    color: black;
-} */
-/* .bgmusic a:hover{
-    color: black;
-} */
 .dropdown:hover .dropdown-content {
     display: block;
 }
