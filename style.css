@@ -99,8 +99,9 @@ nav ul{
 
 
 .gameContainer{
+    width: 80vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 50px;
     margin-bottom: 20px;
 }
