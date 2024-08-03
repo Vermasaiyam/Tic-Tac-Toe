@@ -103,7 +103,7 @@ nav ul{
     width: 80vw;
     display: flex;
     justify-content: space-between;
-    margin: 10vw 30px;
+    margin: 30px 10vw ;
 /*     margin-top: 50px;
     margin-bottom: 20px; */
 }
