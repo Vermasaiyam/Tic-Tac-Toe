@@ -8,6 +8,7 @@
 
 body{
     max-width: 100vw;
+    overflow-x: hidden;
     height: 100vh;
     /* background: linear-gradient(45deg, #0a0a0a, #3a4452); */
 }
